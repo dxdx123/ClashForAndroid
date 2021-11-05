@@ -1,0 +1,195 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.kr328.clash",
+    "module": "service",
+    "version": "2.4.14",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "fossReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-common",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-runtime",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-adapters",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-ktx",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.31"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "service-2.4.14.aar",
+          "url": "service-2.4.14.aar",
+          "size": 455126,
+          "sha512": "88c7e064a09c9ebffc6ed0db56e6bd5961b79f85487d0009d15e7b20638885c4fc76dcd12d2809732ec885a8b17d9de1d4fa9bbc66296c5b2287aef2e31de8ab",
+          "sha256": "e04cdf38c8b43e4c3ecb6274e0cc2cf81399496d62038b7aeeccd75f94aeaa6c",
+          "sha1": "adc46f1ca90dd87f4d84da0f230d6ba86670685e",
+          "md5": "893d1c0eee9bd3e5f1b5a8bbf115c658"
+        }
+      ]
+    },
+    {
+      "name": "fossReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-common",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-runtime",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-adapters",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-ktx",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.31"
+          }
+        },
+        {
+          "group": "com.github.kr328.clash",
+          "module": "core",
+          "version": {
+            "requires": "2.4.14"
+          }
+        },
+        {
+          "group": "com.github.kr328.clash",
+          "module": "common",
+          "version": {
+            "requires": "2.4.14"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.5.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "androidx.room",
+          "module": "room-runtime",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "androidx.room",
+          "module": "room-ktx",
+          "version": {
+            "requires": "2.3.0"
+          }
+        },
+        {
+          "group": "com.github.kr328.kaidl",
+          "module": "kaidl-runtime",
+          "version": {
+            "requires": "1.15"
+          }
+        },
+        {
+          "group": "dev.rikka.rikkax.preference",
+          "module": "multiprocess",
+          "version": {
+            "requires": "1.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "service-2.4.14.aar",
+          "url": "service-2.4.14.aar",
+          "size": 455126,
+          "sha512": "88c7e064a09c9ebffc6ed0db56e6bd5961b79f85487d0009d15e7b20638885c4fc76dcd12d2809732ec885a8b17d9de1d4fa9bbc66296c5b2287aef2e31de8ab",
+          "sha256": "e04cdf38c8b43e4c3ecb6274e0cc2cf81399496d62038b7aeeccd75f94aeaa6c",
+          "sha1": "adc46f1ca90dd87f4d84da0f230d6ba86670685e",
+          "md5": "893d1c0eee9bd3e5f1b5a8bbf115c658"
+        }
+      ]
+    }
+  ]
+}

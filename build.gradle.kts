@@ -30,14 +30,13 @@ allprojects {
 
 subprojects {
     val isApp = name == "app"
-
+    val buildVersionName by extra { "2.4.14" }
+    val buildVersionCode by extra { 204014 }
     apply(plugin = if (isApp) "com.android.application" else "com.android.library")
 
     extensions.configure<BaseExtension> {
         val minSdkVersion = 21
         val targetSdkVersion = 30
-        val buildVersionCode = 204014
-        val buildVersionName = "2.4.14"
         val defaultDimension = "feature"
 
         ndkVersion = "23.0.7599858"
