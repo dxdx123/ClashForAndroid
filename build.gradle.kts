@@ -166,7 +166,7 @@ task("clean", type = Delete::class) {
 }
 
 tasks.wrapper {
-    distributionType = Wrapper.DistributionType.ALL
+    distributionType = Wrapper.DistributionType.BIN
 
     doLast {
         val sha256 = URL("$distributionUrl.sha256").openStream()
