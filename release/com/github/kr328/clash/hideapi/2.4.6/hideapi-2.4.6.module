@@ -1,0 +1,58 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.kr328.clash",
+    "module": "hideapi",
+    "version": "2.4.6",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "fossReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "hideapi-2.4.6.aar",
+          "url": "hideapi-2.4.6.aar",
+          "size": 2398,
+          "sha512": "9f0431c14b02ff9b2d45b6fbdd6ef0974fbd5e272719549924dc8b96935c23aeaac7d1048c892fccb81c87ad1cdb95d938ad683d32c599d49873f88f11dc1275",
+          "sha256": "8731cf43c32e59abd55914d8ab672d8a9b8c3bbf640baba0cf1613ae61a20508",
+          "sha1": "2b3581f99371af4d493aa97a16153d6f5717711e",
+          "md5": "15ed9bf4f3fecab7cc1733daa61b0768"
+        }
+      ]
+    },
+    {
+      "name": "fossReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "hideapi-2.4.6.aar",
+          "url": "hideapi-2.4.6.aar",
+          "size": 2398,
+          "sha512": "9f0431c14b02ff9b2d45b6fbdd6ef0974fbd5e272719549924dc8b96935c23aeaac7d1048c892fccb81c87ad1cdb95d938ad683d32c599d49873f88f11dc1275",
+          "sha256": "8731cf43c32e59abd55914d8ab672d8a9b8c3bbf640baba0cf1613ae61a20508",
+          "sha1": "2b3581f99371af4d493aa97a16153d6f5717711e",
+          "md5": "15ed9bf4f3fecab7cc1733daa61b0768"
+        }
+      ]
+    }
+  ]
+}
