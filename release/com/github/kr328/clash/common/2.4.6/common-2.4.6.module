@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.kr328.clash",
+    "module": "common",
+    "version": "2.4.6",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "fossReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-common",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-runtime",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-adapters",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-ktx",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.31"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "common-2.4.6.aar",
+          "url": "common-2.4.6.aar",
+          "size": 61061,
+          "sha512": "60dd44cb63705dbb052c8cc751649f0839c8cc47c13a7326ade647b6f47ac644aba736d96f8a7531827eed6ccbfef5cda14dc7d7177303588de201d4ee65ab5c",
+          "sha256": "aeb663af11bac5930c5cb1640c552cf3ebd049b6612c3912637768d263044662",
+          "sha1": "8acdb6d02fef0bdbfbf90eb43d8c01d484e974aa",
+          "md5": "fdbf690a9628c1d607df6ade3cc4878b"
+        }
+      ]
+    },
+    {
+      "name": "fossReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-common",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-runtime",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-adapters",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "databinding-ktx",
+          "version": {
+            "requires": "7.0.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.31"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.5.2"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.6.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "common-2.4.6.aar",
+          "url": "common-2.4.6.aar",
+          "size": 61061,
+          "sha512": "60dd44cb63705dbb052c8cc751649f0839c8cc47c13a7326ade647b6f47ac644aba736d96f8a7531827eed6ccbfef5cda14dc7d7177303588de201d4ee65ab5c",
+          "sha256": "aeb663af11bac5930c5cb1640c552cf3ebd049b6612c3912637768d263044662",
+          "sha1": "8acdb6d02fef0bdbfbf90eb43d8c01d484e974aa",
+          "md5": "fdbf690a9628c1d607df6ade3cc4878b"
+        }
+      ]
+    }
+  ]
+}

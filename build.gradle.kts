@@ -12,39 +12,50 @@ buildscript {
         maven("https://maven.kr328.app/releases")
     }
     dependencies {
-        classpath(libs.build.android)
-        classpath(libs.build.kotlin.common)
-        classpath(libs.build.kotlin.serialization)
-        classpath(libs.build.ksp)
-        classpath(libs.build.golang)
+        classpath(deps.build.android)
+        classpath(deps.build.kotlin.common)
+        classpath(deps.build.kotlin.serialization)
+        classpath(deps.build.ksp)
+        classpath(deps.build.golang)
     }
 }
 
-subprojects {
+allprojects {
     repositories {
         mavenCentral()
         google()
         maven("https://maven.kr328.app/releases")
     }
+}
 
+subprojects {
     val isApp = name == "app"
-
+    val buildVersionName by extra { "2.4.14" }
+    val buildVersionCode by extra { 204014 }
     apply(plugin = if (isApp) "com.android.application" else "com.android.library")
 
     extensions.configure<BaseExtension> {
+        val minSdkVersion = 21
+        val targetSdkVersion = 30
+        val defaultDimension = "feature"
+
+        ndkVersion = "23.0.7599858"
+
+        compileSdkVersion(targetSdkVersion)
+
         defaultConfig {
             if (isApp) {
                 applicationId = "com.github.kr328.clash"
             }
 
-            minSdk = 21
-            targetSdk = 31
+            minSdk = minSdkVersion
+            targetSdk = targetSdkVersion
 
-            versionName = "2.5.11"
-            versionCode = 205011
+            versionName = buildVersionName
+            versionCode = buildVersionCode
 
-            resValue("string", "release_name", "v$versionName")
-            resValue("integer", "release_code", "$versionCode")
+            resValue("string", "release_name", "v$buildVersionName")
+            resValue("integer", "release_code", "$buildVersionCode")
 
             externalNativeBuild {
                 cmake {
@@ -59,24 +70,17 @@ subprojects {
             }
         }
 
-        ndkVersion = "23.0.7599858"
-
-        compileSdkVersion(defaultConfig.targetSdk!!)
-
         if (isApp) {
             packagingOptions {
-                resources {
-                    excludes.add("DebugProbesKt.bin")
-                }
+                excludes.add("DebugProbesKt.bin")
             }
         }
 
         productFlavors {
-            flavorDimensions("feature")
+            flavorDimensions(defaultDimension)
 
             create("foss") {
-                isDefault = true
-                dimension = flavorDimensionList[0]
+                dimension = defaultDimension
                 versionNameSuffix = ".foss"
 
                 buildConfigField("boolean", "PREMIUM", "Boolean.parseBoolean(\"false\")")
@@ -86,10 +90,23 @@ subprojects {
                 }
             }
             create("premium") {
-                dimension = flavorDimensionList[0]
+                dimension = defaultDimension
                 versionNameSuffix = ".premium"
 
                 buildConfigField("boolean", "PREMIUM", "Boolean.parseBoolean(\"true\")")
+
+                val tracker = rootProject.file("tracker.properties")
+                if (tracker.exists()) {
+                    val prop = Properties().apply {
+                        tracker.inputStream().use(this::load)
+                    }
+
+                    buildConfigField(
+                        "String",
+                        "APP_CENTER_KEY",
+                        "\"${prop.getProperty("appcenter.key")!!}\""
+                    )
+                }
             }
         }
 
@@ -130,11 +147,6 @@ subprojects {
             }
         }
 
-        variantFilter {
-            ignore = name.startsWith("premium") && !project(":core")
-                .file("src/premium/golang/clash/go.mod").exists()
-        }
-
         if (isApp) {
             this as AppExtension
 
@@ -153,7 +165,7 @@ task("clean", type = Delete::class) {
 }
 
 tasks.wrapper {
-    distributionType = Wrapper.DistributionType.ALL
+    distributionType = Wrapper.DistributionType.BIN
 
     doLast {
         val sha256 = URL("$distributionUrl.sha256").openStream()
